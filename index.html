@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Revive Rec</title>
+    <title>Revive Rec - История обновлений</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -42,73 +42,50 @@
             border-radius: 20px;
             border: 2px solid #ff7700; /* ОРАНЖЕВАЯ обводка */
             box-shadow: 0 0 50px rgba(255, 119, 0, 0.3); /* Оранжевая тень */
-            max-width: 500px;
+            max-width: 600px;
             width: 90%;
             margin: 20px;
         }
         
-        .logo {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            border: 3px solid #ff7700; /* ОРАНЖЕВАЯ обводка */
-            background: linear-gradient(45deg, #ff7700, #ff5500); /* Оранжевый градиент */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 40px;
-            color: #1a1a1a;
-            font-weight: bold;
-        }
-        
-        .status {
-            margin: 20px 0;
-            padding: 15px;
-            border-radius: 15px;
-            background: rgba(0, 0, 0, 0.5);
-            border-left: 4px solid #ff7700; /* Оранжевая полоса */
-        }
-        
-        .online { color: #ff7700; font-weight: bold; font-size: 1.2em; } /* Оранжевый */
-        .offline { color: #ff3366; font-weight: bold; font-size: 1.2em; }
-        
-        .buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 30px;
-        }
-        
-        .btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: block;
-        }
-        
-        .install-btn {
-            background: linear-gradient(45deg, #ff7700, #ff5500); /* Оранжевый */
-            color: #1a1a1a;
-        }
-        
-        .discord-btn {
-            background: linear-gradient(45deg, #5865f2, #7289da);
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 119, 0, 0.3); /* Оранжевый */
             color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            border: 1px solid #ff7700; /* Оранжевая обводка */
+            transition: all 0.3s ease;
         }
         
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(255, 119, 0, 0.4); /* Оранжевая тень */
+        .back-btn:hover {
+            background: rgba(255, 119, 0, 0.5); /* Ярче оранжевый */
+        }
+        
+        .update-content {
+            text-align: left;
+            line-height: 1.6;
+        }
+        
+        .update-date {
+            color: #ff7700; /* Оранжевый */
+            font-size: 0.9em;
+            margin-bottom: 20px;
+        }
+        
+        .update-text {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #ff7700; /* Оранжевая полоса */
+            white-space: pre-line;
         }
         
         h1 {
             color: #ff7700; /* Оранжевый */
+            margin-bottom: 10px;
             text-shadow: 0 0 10px rgba(255, 119, 0, 0.5);
         }
         
@@ -117,52 +94,40 @@
                 padding: 20px; 
                 margin: 15px;
             }
-            .logo { 
-                width: 120px; 
-                height: 120px; 
-                font-size: 30px; 
+            
+            .back-btn {
+                top: 10px;
+                left: 10px;
+                padding: 8px 15px;
+                font-size: 0.9em;
             }
-            .btn { 
-                padding: 12px 25px; 
-                font-size: 1em; 
+            
+            .update-text {
+                padding: 15px;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Кнопка назад -->
+    <a href="index.html" class="back-btn">← Назад</a>
+    
     <div class="container">
-        <div class="logo">RR</div>
+        <h1>📝 История обновлений</h1>
+        <div class="update-date">Последнее обновление: 06.09.2024</div>
         
-        <h1>REVIVE REC</h1> <!-- Изменено на REC -->
-        <p>Приватный сервер Rec Room</p>
-        
-        <div class="status">
-            <h2>Статус сервера:</h2>
-            <p class="online">● ОНЛАЙН</p>
-        </div>
-        
-        <div class="buttons">
-            <a href="https://disk.yandex.by/d/ТВОЙ_ID/launcher.zip" class="btn install-btn">
-                🚀 УСТАНОВИТЬ ЛАУНЧЕР
-            </a>
-            
-            <a href="https://discord.gg/ТВОЯ_ССЫЛКА" class="btn discord-btn">
-                💬 ДИСКОРД
-            </a>
-
-            <a href="updates.html" class="btn" style="background: linear-gradient(45deg, #666, #888); color: white;">
-                📝 ИСТОРИЯ ОБНОВЛЕНИЙ
-            </a>
+        <div class="update-content">
+            <div class="update-Text" >
+Сайт только вышел какие обновления😭
+            </div>
         </div>
     </div>
 
     <script>
-        // Проверка статуса сервера
-        function checkServerStatus() {
-            console.log('Проверка статуса сервера...');
-        }
-        
-        setInterval(checkServerStatus, 300000);
+        // Автоматическая дата
+        const updateDate = document.querySelector('.update-date');
+        const currentDate = new Date().toLocaleDateString('ru-RU');
+        updateDate.textContent = `Последнее обновление: ${currentDate}`;
     </script>
 </body>
 </html>
